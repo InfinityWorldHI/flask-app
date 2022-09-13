@@ -1,0 +1,41 @@
+<form method="POST" action="">
+	<input type="hidden" name="user_index" value="{{index}}">
+	<div class="modal-body">
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+			{{ form.username_up.label(class="form-control-label") }}
+
+			{% if form.username_up.errors %}
+				{{ form.username_up(class="form-control form-control-lg is-invalid") }}
+				<div class="invalid-feedback">
+					{% for error in form.username_up.errors %}
+						<span> {{ error }} </span>
+					{% endfor %}
+				</div>
+			{% else %}
+				{{ form.username_up(class="form-control form-control-lg") }}
+			{% endif %}
+
+		</div>
+		<div class="form-group">
+			{{ form.number_up.label(class="form-control-label") }}
+
+			{% if form.number_up.errors %}
+				{{ form.number_up(class="form-control form-control-lg is-invalid") }}
+				<div class="invalid-feedback">
+					{% for error in form.number_up.errors %}
+						<span> {{ error }} </span>
+					{% endfor %}
+				</div>
+			{% else %}
+				{{ form.number_up(class="form-control form-control-lg") }}
+			{% endif %}
+
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-danger up_user" data-bs-dismiss="modal">Close</button>
+		{{ form.submit(class="btn btn-success") }}
+	</div>
+</form>

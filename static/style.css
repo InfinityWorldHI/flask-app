@@ -1,0 +1,10 @@
+.pull-right {
+	display: block;
+	position: relative;
+	float: right;
+	right: 5px;
+}
+
+tbody tr {
+	font-family: serif;
+}
